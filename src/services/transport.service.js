@@ -1,5 +1,5 @@
 const TransportPool = require("../models/transport_pool");
-const User = require("../models/User");
+const User = require("../models/user");
 
 const createTransportRequest = async (creatorId, data) => {
     const transport = await TransportPool.create({
