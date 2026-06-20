@@ -47,7 +47,10 @@ const transportPoolSchema = new mongoose.Schema({
     },
 
 
+    // people who joined successfully
+
     members:[{
+
 
         user:{
             type:mongoose.Schema.Types.ObjectId,
@@ -63,7 +66,11 @@ const transportPoolSchema = new mongoose.Schema({
     }],
 
 
+
+    // incoming requests
+
     requests:[{
+
 
         sender:{
             type:mongoose.Schema.Types.ObjectId,
@@ -71,43 +78,59 @@ const transportPoolSchema = new mongoose.Schema({
         },
 
 
+        requestedWeight:{
+            type:Number
+        },
+
+
         status:{
+
+
             type:String,
 
+
             enum:[
+
                 "pending",
                 "accepted",
                 "rejected"
+
             ],
 
+
             default:"pending"
+
+
         }
+
 
     }],
 
 
+
     status:{
+
 
         type:String,
 
+
         enum:[
+
             "open",
-            "closed",
+            "full",
             "completed"
+
         ],
+
 
         default:"open"
 
-    },
 
-
-    createdAt:{
-        type:Date,
-        default:Date.now
     }
 
 
 });
+
 
 
 module.exports = mongoose.model(

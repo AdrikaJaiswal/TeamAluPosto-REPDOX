@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
 
+
     name:{
         type:String,
         required:true
@@ -18,19 +19,15 @@ const userSchema = new mongoose.Schema({
 
     role:{
         type:String,
+
         enum:[
             "farmer",
             "transporter",
             "lender",
             "borrower"
         ],
+
         required:true
-    },
-
-
-    aadhaar_verified:{
-        type:Boolean,
-        default:false
     },
 
 
@@ -39,10 +36,29 @@ const userSchema = new mongoose.Schema({
     },
 
 
-    rating:{
-        type:Number,
-        default:5
+    // Mock DigiLocker Aadhaar verification
+
+    aadhaarVerified:{
+        type:Boolean,
+        default:false
     },
+
+
+    aadhaarHash:{
+        type:String,
+        default:null
+    },
+
+
+    // Users connected after accepting requests
+
+    connections:[{
+
+        type:mongoose.Schema.Types.ObjectId,
+
+        ref:"User"
+
+    }],
 
 
     createdAt:{
@@ -54,4 +70,7 @@ const userSchema = new mongoose.Schema({
 });
 
 
-module.exports = mongoose.model("User",userSchema);
+module.exports = mongoose.model(
+    "User",
+    userSchema
+);

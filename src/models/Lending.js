@@ -3,6 +3,9 @@ const mongoose = require("mongoose");
 
 const lendingSchema = new mongoose.Schema({
 
+
+    // person giving the equipment/resource
+
     owner:{
         type:mongoose.Schema.Types.ObjectId,
         ref:"User",
@@ -25,40 +28,84 @@ const lendingSchema = new mongoose.Schema({
     description:{
         type:String
     },
-    
+
+
     availableFromDate:{
         type:Date,
         required:true
     },
+
 
     availableFromTime:{
         type:String,
         required:true
     },
 
-    pricePerHr:{
-        type:Number,
-        default:0
-    },
-
 
     location:{
-        type:String
+        type:String,
+        required:true
     },
 
 
-    available:{
-        type:Boolean,
-        default:true
+    // people asking to borrow
+
+    requests:[{
+
+
+        borrower:{
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"User"
+        },
+
+
+        status:{
+            type:String,
+
+            enum:[
+                "pending",
+                "accepted",
+                "rejected"
+            ],
+
+            default:"pending"
+        },
+
+
+        requestedAt:{
+            type:Date,
+            default:Date.now
+        }
+
+
+    }],
+
+
+
+    status:{
+
+
+        type:String,
+
+
+        enum:[
+
+            "available",
+            "borrowed",
+            "completed"
+
+        ],
+
+
+        default:"available"
+
+
     },
 
 
-    createdAt:{
-        type:Date,
-        default:Date.now
-    }
 
 });
+
 
 
 module.exports = mongoose.model(

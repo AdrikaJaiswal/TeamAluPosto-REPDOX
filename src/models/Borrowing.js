@@ -11,36 +11,42 @@ const borrowingSchema = new mongoose.Schema({
     },
 
 
-    
+    lendingId:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"Lending",
+        required:true
+    },
 
 
-    category:{
+    itemName:{
         type:String
     },
 
 
-    requestDate:{
-        type:Date,
-        default:Date.now
-    },
-
-
-    duration:{
-        type:Number
+    message:{
+        type:String
     },
 
 
     status:{
+
+
         type:String,
 
+
         enum:[
+
             "pending",
             "accepted",
-            "completed",
-            "rejected"
+            "rejected",
+            "completed"
+
         ],
 
+
         default:"pending"
+
+
     },
 
 
@@ -52,6 +58,7 @@ const borrowingSchema = new mongoose.Schema({
 
 
 });
+
 
 
 module.exports = mongoose.model(
