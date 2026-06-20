@@ -11,13 +11,13 @@ app.use(express.json());
 
 connectDB();
 
-// app.use("/auth", require("./src/routes/auth"));
-// app.use("/lending", require("./src/routes/lending"));
-// app.use("/borrowing", require("./src/routes/borrowing"));
-// app.use("/transport", require("./src/routes/transport"));
-// app.use("/users", require("./src/routes/users"));
+app.use("/auth", require("./src/routes/auth"));
+app.use("/lending", require("./src/routes/lending"));
+app.use("/borrowing", require("./src/routes/borrowing"));
+app.use("/transport", require("./src/routes/transport"));
+app.use("/users", require("./src/routes/users"));
 
-// app.use(require("./src/middleware/error.middleware"));
+app.use(require("./src/middleware/error.middleware"));
 
 app.get("/", (req, res) => {
     res.send("KrishiLink Backend Running");
