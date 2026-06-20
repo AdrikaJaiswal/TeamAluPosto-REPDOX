@@ -41,12 +41,13 @@ const lendingSchema = new mongoose.Schema({
         required:true
     },
 
-
-    location:{
-        type:String,
-        required:true
+location: {
+        type: {
+            type: String,
+            default: "Point"
+        },
+        coordinates: [Number]  // [longitude, latitude]
     },
-
 
     // people asking to borrow
 
@@ -106,7 +107,7 @@ const lendingSchema = new mongoose.Schema({
 
 });
 
-
+lendingSchema.index({ location: "2dsphere" });
 
 module.exports = mongoose.model(
     "Lending",

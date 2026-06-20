@@ -35,16 +35,21 @@ const transportPoolSchema = new mongoose.Schema({
     },
 
 
-    pickupLocation:{
-        type:String,
-        required:true
+  pickupLocation: {
+    type: {
+        type: String,
+        default: "Point"
     },
+    coordinates: [Number]
+},
 
-
-    dropLocation:{
-        type:String,
-        required:true
+dropLocation: {
+    type: {
+        type: String,
+        default: "Point"
     },
+    coordinates: [Number]
+},
 
 
     // people who joined successfully
@@ -131,7 +136,7 @@ const transportPoolSchema = new mongoose.Schema({
 
 });
 
-
+transportPoolSchema.index({ pickupLocation: "2dsphere" });
 
 module.exports = mongoose.model(
     "TransportPool",

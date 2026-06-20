@@ -1,76 +1,45 @@
 const mongoose = require("mongoose");
 
-
 const userSchema = new mongoose.Schema({
-
-
-    name:{
-        type:String,
-        required:true
+    name: {
+        type: String,
+        required: true
     },
-
-
-    phone:{
-        type:String,
-        required:true,
-        unique:true
+    phone: {
+        type: String,
+        required: true,
+        unique: true
     },
-
-
-    role:{
-        type:String,
-
-        enum:[
-            "farmer",
-            "transporter",
-            "lender",
-            "borrower"
-        ],
-
-        required:true
+    role: {
+        type: String,
+        enum: ["farmer", "transporter", "lender", "borrower"],
+        required: true
     },
-
-
-    location:{
-        type:String
+    location: {
+        type: {
+            type: String,
+            default: "Point"
+        },
+        coordinates: [Number]  // [longitude, latitude]
     },
-
-
-    // Mock DigiLocker Aadhaar verification
-
-    aadhaarVerified:{
-        type:Boolean,
-        default:false
+    aadhaarVerified: {
+        type: Boolean,
+        default: false
     },
-
-
-    aadhaarHash:{
-        type:String,
-        default:null
+    aadhaarHash: {
+        type: String,
+        default: null
     },
-
-
-    // Users connected after accepting requests
-
-    connections:[{
-
-        type:mongoose.Schema.Types.ObjectId,
-
-        ref:"User"
-
+    connections: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
     }],
-
-
-    createdAt:{
-        type:Date,
-        default:Date.now
+    createdAt: {
+        type: Date,
+        default: Date.now
     }
-
-
 });
 
+userSchema.index({ location: "2dsphere" });
 
-module.exports = mongoose.model(
-    "User",
-    userSchema
-);
+module.exports = mongoose.model("User", userSchema);
