@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KrishiLink - Lend Management</title>
+    <link rel="stylesheet" href="../global.css">
+    <link rel="stylesheet" href="lend.css">
+    <script src="../yay.js" defer></script>
+</head>
+<body>
+
+    <main class="mobile-container page-bg-image lend-layout">
+        
+        <div class="nav-drawer-overlay" id="sidebar-menu">
+            <div class="drawer-content">
+                <button class="drawer-close-btn" aria-label="Close menu" id="close-menu-trigger">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                </button>
+                <nav class="drawer-links-group">
+                    <a href="../home.html" class="drawer-link-item">HOME</a>
+                    <a href="../Pool/pool.html" class="drawer-link-item">TRUCK POOL</a>
+                    <a href="../Borrow/borrow.html" class="drawer-link-item">BORROW</a>
+                    <a href="./lend.html" class="drawer-link-item">LEND</a>
+                </nav>
+            </div>
+        </div>
+
+        <header class="top-navbar">
+            <button class="nav-menu-btn" aria-label="Open menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            <div class="profile-avatar">
+                <svg viewBox="0 0 24 24" fill="#a3a3a3">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                </svg>
+            </div>
+        </header>
+
+        <div class="subheader-bar">
+            <h2>LEND</h2>
+        </div>
+
+        <div class="action-row">
+            <a href="lend-form.html" class="btn-new" aria-label="Create new listing">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+                <span>NEW</span>
+            </a>
+        </div>
+
+        <div class="listings-scroll-feed">
+            
+            <a href="lend-req.html?listingId=tractor01" class="listing-card">
+                <div class="left-col">
+                    <h3 class="item-title">TRACTOR</h3>
+                    <p class="item-subtext">Mahindra Yuvo Tech Plus 585</p>
+                    <span class="status-badge requests-count">2 Requests</span>
+                </div>
+                <div class="right-col">
+                    <p class="price-text">₹500 per hr</p>
+                    <p class="date-text">20/06/2026</p>
+                    <p class="time-text">From 5 pm</p>
+                </div>
+            </a>
+
+            <a href="lend-req.html?listingId=tiller01" class="listing-card">
+                <div class="left-col">
+                    <h3 class="item-title">TILLER</h3>
+                    <p class="item-subtext">High-Powered Rotary Cultivator</p>
+                    <span class="status-badge requests-count">4 Requests</span>
+                </div>
+                <div class="right-col">
+                    <p class="price-text">₹300 per hr</p>
+                    <p class="date-text">20/06/2026</p>
+                    <p class="time-text">From 10 am</p>
+                </div>
+            </a>
+
+        </div>
+    </main>
+</body>
+</html>

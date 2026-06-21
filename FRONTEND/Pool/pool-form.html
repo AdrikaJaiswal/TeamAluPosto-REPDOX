@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Truck Pool</title>
+    <link rel="stylesheet" href="../global.css">
+    <link rel="stylesheet" href="pool-form.css">
+    <script src="../yay.js" defer></script>
+</head>
+<body>
+
+    <main class="mobile-container page-bg-image pool-create-layout">
+        <div class="nav-drawer-overlay" id="sidebar-menu">
+    <div class="drawer-content">
+        
+        <button class="drawer-close-btn" aria-label="Close menu" id="close-menu-trigger">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+        </button>
+
+        <nav class="drawer-links-group">
+            <a href="../home.html" class="drawer-link-item">HOME</a>
+            <a href="../home.html" class="drawer-link-item">DASHBOARD</a>
+            <a href="./pool.html" class="drawer-link-item">TRUCK POOL</a>
+            <a href="../Borrow/borrow.html" class="drawer-link-item">BORROW</a>
+            <a href="../Lend/lend.html" class="drawer-link-item">LEND</a>
+        </nav>
+        
+    </div>
+</div>
+        <header class="top-navbar">
+            <button class="nav-menu-btn" aria-label="Open menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            
+            <div class="profile-avatar">
+                <svg viewBox="0 0 24 24" fill="#a3a3a3">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                </svg>
+            </div>
+        </header>
+
+        <div class="subheader-bar">
+            <h2>TRUCK POOL</h2>
+        </div>
+
+        <form id="pool-form" class="floating-card" action="pool-success.html">
+            
+            <button type="button" class="form-back-btn" aria-label="Go back" onclick="history.back()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+            </button>
+
+            <div class="form-scroll-area">
+                
+                <div class="form-group">
+                    <label for="crop-type">Crop Type</label>
+                    <input type="text" id="crop-type" name="cropType" placeholder="Enter here..." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="total-weight">Total Weight</label>
+                    <input type="text" id="total-weight" name="totalWeight" placeholder="Enter here..." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="packaging-type">Packaging Type</label>
+                    <input type="text" id="packaging-type" name="packagingType" placeholder="Enter here..." required>
+                </div>
+
+                <div class="form-group">
+                    <label>Route</label>
+                    <div class="route-input-row">
+                        <input type="text" name="routeFrom" placeholder="From" required>
+                        <span class="route-split-text">to</span>
+                        <input type="text" name="routeTo" placeholder="To" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="req-date">Requirement Date</label>
+                    <input type="text" id="req-date" name="requirementDate" placeholder="DD/MM/YYYY" required>
+                </div>
+
+                <div class="form-group">
+    <label>Requirement Time</label>
+    <div class="time-spinner-row">
+        
+        <div class="spinner-box-wrapper">
+            <div class="spinner-field">
+                <input type="number" name="reqHour" value="00" min="0" max="23" placeholder="00" minlength="2">
+                <div class="spinner-arrows">
+                    <button type="button" class="arrow-up" aria-label="Increase hour">▲</button>
+                    <button type="button" class="arrow-down" aria-label="Decrease hour">▼</button>
+                </div>
+            </div>
+            <span class="spinner-label">Hour</span>
+        </div>
+
+        <span class="spinner-colon">:</span>
+
+        <div class="spinner-box-wrapper">
+            <div class="spinner-field">
+                <input type="number" name="reqMinute" value="00" min="0" max="59" placeholder="00" minlength="2">
+                <div class="spinner-arrows">
+                    <button type="button" class="arrow-up" aria-label="Increase minute">▲</button>
+                    <button type="button" class="arrow-down" aria-label="Decrease minute">▼</button>
+                </div>
+            </div>
+            <span class="spinner-label">Minute</span>
+        </div>
+
+    </div>
+</div>
+            </div>
+
+            <div class="action-footer">
+                <button type="submit" class="btn-check" aria-label="Confirm Pool Creation">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#2b2b2b" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </button>
+            </div>
+
+        </form>
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truck Pool Chat - Raju S.</title>
+    <link rel="stylesheet" href="../global.css">
+    <link rel="stylesheet" href="pool-otherchat.css">
+</head>
+<body>
+
+    <main class="mobile-container page-bg-image chat-layout">
+        
+        <div class="nav-drawer-overlay" id="sidebar-menu">
+            <div class="drawer-content">
+                
+                <button class="drawer-close-btn" aria-label="Close menu" id="close-menu-trigger">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                </button>
+
+                <nav class="drawer-links-group">
+                    <a href="../home.html" class="drawer-link-item">HOME</a>
+                    <a href="../home.html" class="drawer-link-item">DASHBOARD</a>
+                    <a href="pool-feed.html" class="drawer-link-item">TRUCK POOL</a>
+                    <a href="../Borrow/borrow.html" class="drawer-link-item">BORROW</a>
+                    <a href="../Lend/lend.html" class="drawer-link-item">LEND</a>
+                </nav>
+                
+            </div>
+        </div>
+        
+        <header class="top-navbar">
+            <button class="nav-menu-btn" aria-label="Open menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            <div class="profile-avatar">
+                <svg viewBox="0 0 24 24" fill="#a3a3a3">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                </svg>
+            </div>
+        </header>
+
+        <div class="subheader-bar">
+            <h2>TRUCK POOL</h2>
+        </div>
+
+        <div class="listing-preview-wrapper">
+            <div class="listing-card">
+                <div class="left-col">
+                    <h3 class="item-title">MANGOES</h3>
+                    <p class="item-meta">3 Kg</p>
+                    <p class="item-subtext">Wooden crates</p>
+                    <span class="status-badge requests-count">2 Requests</span>
+                </div>
+                <div class="right-col">
+                    <p class="date-text">20/06/2026</p>
+                    <p class="time-text">5 pm</p>
+                    <p class="route-text">KOLKATA to HOWRAH</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="chat-panel is-accepted">
+            
+            <div class="chat-header">
+                <button class="back-btn" aria-label="Go back" onclick="history.back()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                </button>
+                <div class="chat-user-avatar">
+                    <svg viewBox="0 0 24 24" fill="#6b7280">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                    </svg>
+                </div>
+                <h1 class="chat-user-name">Raju S.</h1>
+            </div>
+
+            <div class="status-ribbon">
+                <span class="status-text-pending">Request not accepted yet.</span>
+                <span class="status-text-accepted">Request accepted!</span>
+                <span class="status-text-rejected">Request rejected.</span>
+            </div>
+
+            <div class="chat-messages-area">
+                
+                <div class="message-bubble outgoing">
+                    <p>Hey let's pool up!</p>
+                </div>
+
+                <div class="state-widget widget-accepted">
+                    <p class="widget-label">Raju S.'s Phone Number:</p>
+                    <div class="phone-number-row">
+                        <span class="phone-digits">+91 12345 67890</span>
+                        <button class="copy-btn" aria-label="Copy phone number">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="state-widget widget-rejected">
+                    <p>-- Chat Ended --</p>
+                </div>
+                
+            </div>
+
+            <div class="chat-input-container">
+                <div class="input-pill-wrapper">
+                    <input type="text" placeholder="Write your message..." aria-label="Message text entry">
+                    <button class="mic-btn" aria-label="Voice input">
+                        <svg viewBox="0 0 24 24" fill="#2c3e50">
+                            <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/>
+                            <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="../yay.js" defer></script>
+</body>
+</html>

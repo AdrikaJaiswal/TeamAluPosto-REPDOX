@@ -1,0 +1,398 @@
+/* ==========================================================================
+   GLOBAL VIEW CONTAINER LAYOUTS
+   ========================================================================== */
+
+.chat-layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding: 0 !important;
+}
+
+.top-navbar {
+    background-color: #000000;
+    width: 100%;
+    height: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    z-index: 10;
+}
+
+.nav-menu-btn, .back-btn, .mic-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-menu-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+.profile-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.subheader-bar {
+    background-color: rgba(0, 0, 0, 0.65);
+    width: 100%;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subheader-bar h2 {
+    font-family: var(--font-ui);
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0.8px;
+}
+
+.listing-preview-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 24px 24px 16px 24px;
+}
+
+/* ==========================================================================
+   UPPER POOL PREVIEW CARD COMPONENT
+   ========================================================================== */
+
+.listing-card {
+    background-color: var(--card-bg);
+    width: 100%;
+    max-width: 347px;
+    border-radius: 16px;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.left-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.right-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+}
+
+.item-title {
+    font-family: var(--font-ui);
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.1;
+    letter-spacing: 0.5px;
+}
+
+.item-meta {
+    font-family: var(--font-ui);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-top: 2px;
+}
+
+.item-subtext {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    color: #4b5563;
+    margin-bottom: 12px;
+}
+
+.status-badge {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.status-badge::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.requests-count {
+    color: #3b82f6;
+}
+.requests-count::before {
+    background-color: #3b82f6;
+}
+
+.date-text, .time-text {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 500;
+    color: #1f2937;
+    line-height: 1.3;
+}
+
+.route-text {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 700;
+    color: #111827;
+    margin-top: 14px;
+    letter-spacing: 0.2px;
+}
+
+/* ==========================================================================
+   MAIN CHAT PANEL STRUCTURE
+   ========================================================================== */
+
+.chat-panel {
+    background-color: var(--card-bg);
+    width: 347px;
+    flex-grow: 1;
+    margin: 0 auto 24px auto;
+    border-radius: 32px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+}
+
+.chat-header {
+    background-color: #f2b28c;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    gap: 12px;
+}
+
+.back-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.chat-user-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #e5e7eb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat-user-avatar svg {
+    width: 24px;
+    height: 24px;
+}
+
+.chat-user-name {
+    font-family: var(--font-ui);
+    font-size: 22px;
+    font-weight: 600;
+    color: #000000;
+}
+
+.status-ribbon {
+    width: 100%;
+    height: 36px;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.status-ribbon span {
+    font-family: var(--font-ui);
+    font-size: 16px;
+    margin: 0;
+}
+
+.chat-messages-area {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.message-bubble.outgoing {
+    align-self: center; /* Centered layout block treatment specific to your pool request prompt */
+    background-color: #e5e7eb;
+    max-width: 85%;
+    padding: 10px 24px;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    margin: 8px 0 24px 0;
+}
+
+.message-bubble p {
+    font-family: var(--font-ui);
+    font-size: 11px;
+    color: #4b5563;
+    margin: 0;
+}
+
+/* ==========================================================================
+   INPUT BAR CONTROL DOCK
+   ========================================================================== */
+
+.chat-input-container {
+    padding: 16px;
+    background-color: var(--card-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-pill-wrapper {
+    background-color: #e5e7eb;
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0 14px;
+}
+
+.input-pill-wrapper input {
+    flex-grow: 1;
+    background: none;
+    border: none;
+    outline: none;
+    font-family: var(--font-ui);
+    font-size: 14px;
+    color: #374151;
+}
+
+.input-pill-wrapper input::placeholder {
+    color: #6b7280;
+}
+
+.mic-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* ==========================================================================
+   STATE ENGINE DYNAMIC RULES
+   ========================================================================== */
+
+.status-ribbon span,
+.state-widget {
+    display: none;
+}
+
+/* PENDING STATE */
+.chat-panel.is-pending .status-text-pending {
+    display: block;
+    color: #9ca3af;
+}
+
+/* ACCEPTED STATE */
+.chat-panel.is-accepted .status-text-accepted {
+    display: block;
+    color: #8ade44;
+    font-weight: 600;
+}
+.chat-panel.is-accepted .widget-accepted {
+    display: flex;
+}
+
+/* REJECTED STATE */
+.chat-panel.is-rejected .status-text-rejected {
+    display: block;
+    color: #e06c6c;
+    font-weight: 600;
+}
+.chat-panel.is-rejected .widget-rejected {
+    display: flex;
+}
+.chat-panel.is-rejected .chat-input-container {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   DYNAMIC STATE CARD WIDGETS
+   ========================================================================== */
+
+.state-widget {
+    width: 100%;
+    border-radius: 12px;
+    padding: 16px;
+    margin: 16px 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-ui);
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.widget-accepted {
+    background-color: #bbf7d0;
+    color: #166534;
+}
+
+.widget-label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.phone-number-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.phone-digits {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.copy-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    opacity: 0.7;
+}
+.copy-btn svg { width: 16px; height: 16px; }
+
+.widget-rejected {
+    background-color: #fca5a5;
+    color: #7f1d1d;
+    font-size: 15px;
+    font-weight: 700;
+    height: 52px;
+}

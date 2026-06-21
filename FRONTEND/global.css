@@ -1,0 +1,159 @@
+:root {
+    --card-bg: #ffffff;
+    --text-dark: #000000;
+    /* Updated all font fallbacks strictly to standard Arial core stacks */
+    --font-accent: Arial, Helvetica, sans-serif;
+    --font-ui: Arial, Helvetica, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* Enforces Arial universally across inputs, buttons, and text blocks */
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+body {
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+/* FIXED MOBILE CONTAINER BOUNDARIES:
+   Uses standard mobile constraints on desktop screens, but scales 
+   to 100% of the viewport width and height natively on mobile devices.
+*/
+.mobile-container {
+    width: 100%;
+    max-width: 412px;
+    height: 100vh;
+    max-height: 917px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+    background-color: #ffffff;
+}
+
+/* Fallback media query rule ensuring absolute 100% screen real-estate on real mobile phones */
+@media (max-width: 480px) {
+    .mobile-container {
+        max-width: 100%;
+        max-height: 100vh;
+        box-shadow: none;
+    }
+}
+
+/* Base background setup pulling directly from your root directory */
+.page-bg-image {
+    width: 100%;
+    height: 100%;
+    background-image: url('bg.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* REMOVED the aggressive display: flex centering that was squishing your page layouts */
+    position: relative;
+}
+
+/* ==========================================================================
+   VANILLA SIDE DRAWER MANAGEMENT NAVIGATION
+   ========================================================================== */
+
+/* Full view window modal container backdrop overlay masking wrapper */
+.nav-drawer-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Smooth dark tint behind panel overlay */
+    z-index: 999;
+    
+    /* Toggle Mechanics baseline animation transitions settings */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+}
+
+/* Slide-out Surface Frame Container Panel drawer */
+.drawer-content {
+    background-color: #444444; /* Dark gray surface matching layout mocks */
+    width: 70%; /* Marginally expanded for safer text padding flow */
+    height: 100%;
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    /* Enforces sliding animation paths on initialization metrics */
+    transform: translateX(-100%);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Close action header trigger layout settings blocks */
+.drawer-close-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    align-self: flex-end;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.drawer-close-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Nav links collection layouts handles wrapper properties */
+.drawer-links-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Modular link items matching button panel block capsules visual spec sheets */
+.drawer-link-item {
+    background-color: #e5e7eb; /* Soft pastel light grey button blocks styles */
+    color: #000000;
+    width: 100%;
+    height: 44px;
+    border-radius: 6px;
+    padding-left: 14px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    transition: background-color 0.15s ease;
+}
+
+.drawer-link-item:hover {
+    background-color: #d1d5db;
+}
+
+/* ==========================================================================
+   INTERACTIVE REPAINT LOGIC UTILITIES CLASSES
+   ========================================================================== */
+
+/* Appends active visible visibility settings parameters cleanly */
+.mobile-container.nav-open .nav-drawer-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.mobile-container.nav-open .drawer-content {
+    transform: translateX(0);
+}
