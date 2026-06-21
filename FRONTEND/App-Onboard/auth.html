@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KrishiLink - Authentication</title>
+    <link rel="stylesheet" href="../global.css">
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+
+    <main class="mobile-container page-bg-image page-auth-layout">
+        
+        <div class="card-positioning-wrapper">
+            <form id="auth-form" class="floating-card">
+                
+                <div class="auth-toggle-header">
+                    <button type="button" class="toggle-tab-btn active" id="btn-mode-login">LOGIN</button>
+                    <button type="button" class="toggle-tab-btn" id="btn-mode-register">REGISTER</button>
+                </div>
+                
+                <h1 class="page-title" id="auth-view-title">WELCOME BACK</h1>
+                
+                <div class="form-scroll-workspace">
+                    
+                    <div id="registration-only-fields" style="display: none;">
+                        <div class="input-block">
+                            <label class="input-field-label">Full Name</label>
+                            <input type="text" name="name" id="reg-name" placeholder="Enter full name">
+                        </div>
+                    </div>
+
+                    <div class="input-block">
+                        <label class="input-field-label">Phone Number</label>
+                        <input 
+                            type="tel" 
+                            id="phone-number" 
+                            name="phone" 
+                            placeholder="Enter 10-digit number" 
+                            required
+                            pattern="[0-9]{10}"
+                            inputmode="numeric"
+                        >
+                    </div>
+
+                    <div class="input-block">
+                        <label class="input-field-label">Aadhaar Card Number</label>
+                        <input 
+                            type="password" 
+                            id="aadhaar-number" 
+                            name="aadhaarNumber" 
+                            placeholder="Enter 12-digit UID number" 
+                            maxlength="12"
+                            required
+                            pattern="[0-9]{12}"
+                            inputmode="numeric"
+                        >
+                    </div>
+
+                    <input type="hidden" id="geo-coordinates" name="coordinates">
+                </div>
+
+                <div class="action-footer">
+                    <button type="submit" class="btn-check" aria-label="Submit Authentication Form">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#2b2b2b" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </main>
+
+    <script src="auth-handler.js" defer></script>
+</body>
+</html>

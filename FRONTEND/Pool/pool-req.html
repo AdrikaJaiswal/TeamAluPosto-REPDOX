@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truck Pool Requests</title>
+    <link rel="stylesheet" href="../global.css">
+    <link rel="stylesheet" href="pool-req.css">
+    <script src="../yay.js" defer></script>
+</head>
+<body>
+
+    <main class="mobile-container page-bg-image pool-requests-layout">
+        <div class="nav-drawer-overlay" id="sidebar-menu">
+    <div class="drawer-content">
+        
+        <button class="drawer-close-btn" aria-label="Close menu" id="close-menu-trigger">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+        </button>
+
+        <nav class="drawer-links-group">
+            <a href="../home.html" class="drawer-link-item">HOME</a>
+            <a href="../home.html" class="drawer-link-item">DASHBOARD</a>
+            <a href="./pool.html" class="drawer-link-item">TRUCK POOL</a>
+            <a href="../Borrow/borrow.html" class="drawer-link-item">BORROW</a>
+            <a href="../Lend/lend.html" class="drawer-link-item">LEND</a>
+        </nav>
+        
+    </div>
+</div>
+        <header class="top-navbar">
+            <button class="nav-menu-btn" aria-label="Open menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            
+            <div class="profile-avatar">
+                <svg viewBox="0 0 24 24" fill="#a3a3a3">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                </svg>
+            </div>
+        </header>
+
+        <div class="subheader-bar">
+            <h2>TRUCK POOL</h2>
+        </div>
+
+        <div class="listing-preview-wrapper">
+            <div class="listing-card">
+                <div class="left-col">
+                    <button class="card-back-btn" aria-label="Go back" onclick="history.back()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="19" y1="12" x2="5" y2="12"></line>
+                            <polyline points="12 19 5 12 12 5"></polyline>
+                        </svg>
+                    </button>
+                    <h3 class="item-title">MANGOES</h3>
+                    <p class="item-meta">3 Kg</p>
+                    <p class="item-subtext">Wooden crates</p>
+                    <span class="status-badge requests-count">2 Requests</span>
+                </div>
+                <div class="right-col">
+                    <p class="date-text">20/06/2026</p>
+                    <p class="time-text">5 pm</p>
+                    <p class="route-text">KOLKATA to HOWRAH</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="requests-scroll-feed">
+            
+            <a href="pool-mychat.html" class="request-user-card">
+                <div class="user-avatar-col">
+                    <svg viewBox="0 0 24 24" fill="#9ca3af">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                    </svg>
+                </div>
+                <div class="user-info-col">
+                    <h4 class="user-name">Harini R.</h4>
+                    <p class="user-message-snippet">Hello! I would like to borrow your trac...</p>
+                </div>
+                <div class="meta-data-col">
+                    <span class="timestamp-label">1 hr ago</span>
+                    <span class="unread-count-badge">1</span>
+                </div>
+            </a>
+
+            <a href="pool-mychat.html" class="request-user-card">
+                <div class="user-avatar-col">
+                    <svg viewBox="0 0 24 24" fill="#9ca3af">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                    </svg>
+                </div>
+                <div class="user-info-col">
+                    <h4 class="user-name">Rohit H.</h4>
+                    <p class="user-message-snippet">Hi, Pls give me your tractor for 2 days.</p>
+                </div>
+                <div class="meta-data-col">
+                    <span class="timestamp-label">1 hr ago</span>
+                    <span class="unread-count-badge">3</span>
+                </div>
+            </a>
+
+        </div>
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,142 @@
+/* ==========================================================================
+   1. CORE CONTAINER LAYOUT
+   ========================================================================== */
+
+/* Structure content vertically underneath the navbar and pin to absolute boundaries */
+.dashboard-layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0 !important; /* Overrides global padding frames */
+    box-sizing: border-box;
+    overflow: hidden; 
+}
+
+/* Ensure background assets scale uniformly over mobile containers */
+.page-bg-image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* ==========================================================================
+   2. TOP NAVIGATION BAR & COMPONENT FRAMEWORKS
+   ========================================================================== */
+
+/* Top Header Navigation Panel */
+.top-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 56px;
+    padding: 0 16px;
+    background-color: #000000;
+    z-index: 10;
+    flex-shrink: 0; /* Prevents layout collapse on short screens */
+    box-sizing: border-box;
+}
+
+/* Hamburger Menu Toggle Trigger Button */
+.nav-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+/* SVG Vector constraints inside the Menu Button */
+.nav-menu-btn svg {
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+
+/* Profile Picture Circle Frame */
+.profile-avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    overflow: hidden;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+/* SVG Vector constraints inside the Profile Link Avatar */
+.profile-avatar svg {
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+
+/* ==========================================================================
+   3. MENU CARDS GRID AND USER ROUTING UI
+   ========================================================================== */
+
+/* Flex wrapper isolating the center content block */
+.menu-cards-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;    
+    flex-grow: 1;
+    gap: 24px;              
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+/* Reusable Dashboard Core Directional Links */
+.menu-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 347px; 
+    height: 120px;    
+    border-radius: 24px;
+    border: 3px solid #000000;
+    background-color: #ffffff; /* Fallback accent configuration */
+    
+    /* Typography Rules */
+    font-weight: 800;
+    font-size: 32px;
+    letter-spacing: 0.5px;
+    color: #000000;
+    text-decoration: none;
+    
+    /* Effects and Transformations */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    transition: transform 0.1s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+/* Hover Dynamic Focus state */
+.menu-card:hover {
+    background-color: #f9fafb;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Click / Tap Active Event Animation */
+.menu-card:active {
+    transform: scale(0.96);
+}

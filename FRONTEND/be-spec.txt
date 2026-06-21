@@ -1,0 +1,66 @@
+==========================================================================
+KRISHILINK Open-Protocol Backend Routing Specs (June 2026)
+==========================================================================
+🔗 BASE URL: http://localhost:3000
+
+[MANDATORY HEADER FOR AUTHENTICATED ROUTES]
+Authorization: Bearer <token>
+
+--------------------------------------------------------------------------
+1. USER INITIALIZATION & PROFILES
+--------------------------------------------------------------------------
+POST /auth/register                  -> Create profile with Mock Aadhaar Digilocker
+POST /auth/login                     -> Login via phone verification challenge
+GET  /users/me                       -> Returns active session client credentials
+
+* Register Payload Schema:
+{
+  "name": "Ramesh Kumar",
+  "phone": "9876543210",
+  "role": "farmer",
+  "aadhaarNumber": "[Aadhaar Redacted]",
+  "coordinates": [88.3639, 22.5726]
+}
+Roles option sets: farmer / transporter / lender / borrower
+
+--------------------------------------------------------------------------
+2. MACHINERY LENDING & BORROWING MODULES
+--------------------------------------------------------------------------
+POST /lending/create                 -> Create tool availability listing
+GET  /lending/all                    -> Discovery feed (FYP Marketplace marketplace)
+GET  /lending/:id                    -> Specific equipment detail record
+POST /lending/:id/request            -> Inbound borrow request transaction
+POST /lending/:id/accept/:borrowerId -> Accept match contract (reveals phone metrics)
+POST /lending/:id/reject/:borrowerId -> Reject match contract request
+GET  /borrowing/my                   -> Borrower's dashboard of sent requests
+
+* Create Lending Payload Schema:
+{
+  "itemName": "Tractor",
+  "category": "machinery",
+  "description": "Available for 2 days",
+  "availableFromDate": "2026-06-25",
+  "availableFromTime": "08:00",
+  "coordinates": [88.3639, 22.5726]
+}
+
+--------------------------------------------------------------------------
+3. FREIGHT SHARE TRUCK POOL MODULES
+--------------------------------------------------------------------------
+POST /transport/create               -> Register new shared logistics routing slot
+GET  /transport/all                  -> Public transportation pipeline board
+GET  /transport/:id                  -> Detailed logistics slot record
+POST /transport/:id/request          -> Join shared freight truck pool pipeline
+POST /transport/:id/accept/:senderId -> Accept companion (reveals BOTH phone profiles)
+POST /transport/:id/reject/:senderId -> Dismiss join cargo request
+
+* Create Transport Payload Schema:
+{
+  "cropType": "Rice",
+  "readyDate": "2026-06-25",
+  "packageType": "Bags",
+  "totalWeight": 500,
+  "pickupCoordinates": [88.3639, 22.5726],
+  "dropCoordinates": [88.4639, 22.6726]
+}
+==========================================================================
