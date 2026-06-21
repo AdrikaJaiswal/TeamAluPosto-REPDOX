@@ -5,22 +5,56 @@
 KrishiLink is an open-protocol backend that enables farmers, transporters, and buyers to coordinate without any central authority. Built with Node.js, Express, and MongoDB.
 
 ---
+## 🎨 Wireframes & Page Structure
+
+The platform's high-fidelity component architectures, neomorphic design frames, and absolute user flows are thoroughly mapped here:
+* **Figma Design Canvas:** [KrishiLink Wireframes & Layout Blueprint](https://www.figma.com/design/5AXbqmDyvf0lCHNwLKIQuv/KrishiLink?node-id=0-1&t=QCF4kRzxzejLi4EQ-1)
+---
 
 ## Tech Stack
 
-- **Runtime:** Node.js
-- **Framework:** Express.js v4
-- **Database:** MongoDB Atlas + Mongoose
-- **Auth:** JWT + Mock DigiLocker (Aadhaar simulation)
-- **Password Hashing:** bcrypt
-- **Dev Tool:** Nodemon
+### Frontend Mobile Container
+* **Markup & Layout:** Semantic HTML5 Structure
+* **Style Framework:** Component-Isolated CSS3 Absolute Positioning Resets
+* **Dynamic Data Engine:** Native URL Query String Interp State-Injectors (JavaScript)
+
+### Backend Open-Protocol
+* **Runtime Environment:** Node.js
+* **Web Framework:** Express.js v4
+* **Database Management:** MongoDB Atlas + Mongoose ODM
+* **Security & Hashing:** JWT Tokens + bcrypt Payload Scrambling
+* **Live Reload Tooling:** Nodemon
 
 ---
 
 ## Project Structure
 
 ```
-krishilink-backend/
+├── FRONTEND/
+│   ├── global.css                 # Master typography, palette, resets
+│   ├── home.html                  # Global system launchboard
+│   ├── yay.js                     # Shared drawer menu navigation controller
+│   ├── App-Onboard/               # Language and onboarding screens
+│   ├── Borrow/
+│   │   ├── borrow.html            # Equipment marketplace browse catalog
+│   │   ├── borrow-chat.html       # Isolated client borrower dynamic messaging box
+│   │   └── chat-renderer.js       # Contextual browser URL state parser
+│   ├── Lend/
+│   │   ├── lend.html              # Owner machinery listing dashboards
+│   │   ├── lend-form.html         # Add new tool registration workflow panel
+│   │   ├── lend-req.html          # Dynamic borrower connection inquiry boards
+│   │   └── lend-chat.html         # Owner acceptance review control panel
+│   └── Pool/
+│       ├── pool.html              # Truck Pool operational split-hub routing options
+│       ├── pool-form.html         # Logistics cargo load request setup page
+│       ├── pool-myreq.html        # Active freight listings board
+│       ├── pool-req.html          # Co-pooling companion incoming request boards
+│       ├── pool-mychat.html       # Logistics companion connection control panels
+│       ├── pool-feed.html         # Public open transport search grid view
+│       ├── pool-otherchat.html    # Isolated delivery workspace conversation frame
+│       └── pool-chat-renderer.js  # Dynamic contextual query parser engine
+|
+├── krishilink-backend/
 ├── index.js                  # Server entry point
 ├── .env                      # Environment variables (never commit)
 ├── package.json
