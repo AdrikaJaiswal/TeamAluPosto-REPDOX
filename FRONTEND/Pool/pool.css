@@ -1,5 +1,5 @@
 /* ==========================================================================
-   GLOBAL VIEW CONTAINER LAYOUTS
+   1. CORE VIEWPORT ANCHOR resets
    ========================================================================== */
 
 .portal-layout {
@@ -7,8 +7,21 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
     padding: 0 !important;
+    box-sizing: border-box;
+    overflow: hidden;
 }
+
+/* ==========================================================================
+   2. NAVBAR & HEADER SUB-BAR METRICS
+   ========================================================================== */
 
 .top-navbar {
     background-color: #000000;
@@ -19,6 +32,8 @@
     align-items: center;
     padding: 0 16px;
     z-index: 10;
+    flex-shrink: 0;
+    box-sizing: border-box;
 }
 
 .nav-menu-btn {
@@ -28,11 +43,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    flex-shrink: 0;
 }
 
 .nav-menu-btn svg {
     width: 24px;
     height: 24px;
+    display: block;
 }
 
 .profile-avatar {
@@ -44,27 +64,34 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    flex-shrink: 0;
+}
+
+.profile-avatar svg {
+    width: 24px;
+    height: 24px;
+    display: block;
 }
 
 .subheader-bar {
-    background-color: rgba(0, 0, 0, 0.65);
+    background-color: rgba(0, 0, 0, 0.75);
     width: 100%;
     height: 44px;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-shrink: 0;
 }
 
 .subheader-bar h2 {
-    font-family: var(--font-ui);
     color: #ffffff;
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 700;
     letter-spacing: 0.8px;
 }
 
 /* ==========================================================================
-   PORTAL ACTION BUTTON CARDS WORKSPACE
+   3. ACTION NAVIGATIONAL CARDS WORKSPACE
    ========================================================================== */
 
 .portal-workspace {
@@ -73,45 +100,47 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 40px; /* Provides clean spacing between the two main choice boxes */
-    padding: 20px 24px 60px 24px;
+    gap: 32px; /* Balanced grid spacing proportional to core dashboard card views */
+    padding: 24px;
+    box-sizing: border-box;
 }
 
-/* Solid White Block Links Containers */
+/* Crisp Clean Solid Choice Block Links Components */
 .portal-card {
-    background-color: var(--card-bg);
+    background-color: #ffffff;
     width: 100%;
-    max-width: 280px;
-    height: 124px;
-    border-radius: 20px;
-    border: 3px solid #000000; /* Distinct crisp block stroke outline boundary */
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    max-width: 347px; /* Scaled to perfectly match home dashboard grid widths */
+    height: 120px;    /* Balanced structural heights */
+    border-radius: 24px;
+    border: 3px solid #000000; /* Signature solid black border outline accent */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
     text-decoration: none;
     
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 0 16px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    flex-shrink: 0;
     
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    transition: transform 0.1s ease, box-shadow 0.15s ease;
+    cursor: pointer;
 }
 
 .portal-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
+    background-color: #f9fafb;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .portal-card:active {
-    transform: translateY(1px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transform: scale(0.96);
 }
 
-/* Bold typography treatments matching image specs precisely */
+/* Bold typography treatments forcing Arial clean stacks */
 .portal-card h2 {
-    font-family: var(--font-accent); /* Pulls heavy Arial Black font weights */
     font-size: 28px;
-    font-weight: 900;
+    font-weight: 800;
     color: #000000;
     line-height: 1.15;
     letter-spacing: 0.5px;
