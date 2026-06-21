@@ -1,4 +1,4 @@
-# KrishiLink Backend 🌾
+# KrishiLink 🌾
 
 > Decentralised Agri-Coordination Platform — Solve for India Hackathon | Theme 03: Agriculture & Rural Systems | PS 02
 
